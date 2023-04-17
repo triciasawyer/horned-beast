@@ -1,6 +1,8 @@
 import './App.css';
 import React from 'react';
 import Header from './Header.js';
+import Main from './Main.js';
+import Footer from './Footer.js';
 
 
 class App extends React.Component {
@@ -19,13 +21,11 @@ class App extends React.Component {
       {/* add header code, ends up here*/}
         <Header />
         {/* add main*/}
-        <main />
+        <Main />
         {/* add footer*/}
-        <footer />
+        <Footer />
       </>
-
-    )
+    );
   }
-
 }
 export default App;
