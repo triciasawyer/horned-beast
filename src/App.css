@@ -5,23 +5,23 @@ body {
   color: whitesmoke;
 }
 h2, h3 {
-  background-color: red;
+  background-color: rgb(60, 132, 53);
   border-radius: 10px;
   display: inline;
   padding: 10px;
 }
 p {
   font-size: 30px;
-  background-color: green;
+  background-color: rgb(89, 123, 89);
 }
 
 h1 {
-  background-color: rgb(14, 125, 203);
+  background-color: rgb(25, 66, 18);
   border-radius: 10px;
   padding: 10px;
 }
 footer {
-  background-color: rgb(14, 125, 203);
+  background-color: rgb(29, 72, 105);
   border-radius: 10px;
   padding: 10px;
   height: 100px;

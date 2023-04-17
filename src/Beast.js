@@ -7,7 +7,7 @@ class Beast extends React.Component {
             <>
                 {/*<img src={this.props.image_url}/>*/}
                 <article>
-                    <h2>Beast Title: {this.props.title}</h2>
+                    <h2>Horned Beast: {this.props.title}</h2>
                     {/* <h3>Image:</h3> */}
                     <p>Description: {this.props.description}</p>
                 </article>
