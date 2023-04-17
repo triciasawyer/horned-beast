@@ -11,14 +11,13 @@ class App extends React.Component {
 
 
 
-
   //2. render() {return is where our html comes from}
 
   render() {
     console.log('our input/output');
     return (
       <>
-      {/* add header code, ends up here*/}
+        {/* add header code, ends up here*/}
         <Header />
         {/* add main*/}
         <Main />
@@ -28,4 +27,5 @@ class App extends React.Component {
     );
   }
 }
+
 export default App;
