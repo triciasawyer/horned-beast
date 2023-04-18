@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 import './beast.css';
 
 class Beast extends React.Component {
@@ -37,9 +38,10 @@ class Beast extends React.Component {
                 <article>
                     <h2>Beast: {this.props.title}</h2>
                     <p>Favorited {this.state.favorites + ' '} times</p>
-                    <p id='heart' onClick={this.handleFavorites}> ❤️ </p>
+                    <Button onClick={this.handleFavorites}> ❤️ </Button>
                     <img src={this.props.image_url} alt={this.props.title} />
                     <p>Description: {this.props.description}</p>
+
                 </article>
             </>
         );
