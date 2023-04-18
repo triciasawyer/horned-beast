@@ -14,7 +14,6 @@ class App extends React.Component {
   //2. render() {return is where our html comes from}
 
   render() {
-    console.log('our input/output');
     return (
       <>
         <Header />
