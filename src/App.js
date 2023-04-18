@@ -17,11 +17,8 @@ class App extends React.Component {
     console.log('our input/output');
     return (
       <>
-        {/* add header code, ends up here*/}
         <Header />
-        {/* add main*/}
         <Main />
-        {/* add footer*/}
         <Footer />
       </>
     );

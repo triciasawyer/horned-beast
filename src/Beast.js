@@ -1,14 +1,27 @@
 import React from 'react';
 
 class Beast extends React.Component {
+
+    construcor(props) {
+        // likes = 0;
+    };
+
+    // helper function 
+    // handleLikes = () => {
+
+    // };
+
+
+
+
+
+
     render() {
-        console.log('beast props', this.props.title);
         return (
             <>
-                {/*<img src={this.props.image_url}/>*/}
                 <article>
-                    <h2>Horned Beast: {this.props.title}</h2>
-                    {/* <h3>Image:</h3> */}
+                    <h2>Animal: {this.props.title}</h2>
+                    <h3><img src={this.props.image_url} alt={this.props.title} /></h3>
                     <p>Description: {this.props.description}</p>
                 </article>
             </>
