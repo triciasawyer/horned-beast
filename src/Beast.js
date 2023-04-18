@@ -21,7 +21,7 @@ class Beast extends React.Component {
         this.setState({
             beastNeeded: true
         })
-    }
+    };
 
     beastGot = () => {
         this.setState({
