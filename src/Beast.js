@@ -1,4 +1,5 @@
 import React from 'react';
+import './beast.css';
 
 class Beast extends React.Component {
     constructor(props) {
@@ -35,11 +36,10 @@ class Beast extends React.Component {
             <>
                 <article>
                     <h2>Beast: {this.props.title}</h2>
-                    <p>Favorited {this.state.favorites + ' '} times!</p>
-                    <p onClick={this.handleFavorites}> ❤️ </p>
+                    <p>Favorited {this.state.favorites + ' '} times</p>
+                    <p id='heart' onClick={this.handleFavorites}> ❤️ </p>
                     <img src={this.props.image_url} alt={this.props.title} />
                     <p>Description: {this.props.description}</p>
-                    
                 </article>
             </>
         );
