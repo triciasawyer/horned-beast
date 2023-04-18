@@ -8,7 +8,7 @@ class Main extends React.Component {
         console.log(data);
         let beasts = [];
         data.forEach((newBeast, index) => {
-            beasts.push(<Beast title={newBeast.name} image_url={newBeast.image_url} description={newBeast.description} key={index} />)
+            beasts.push(<Beast title={newBeast.title} image_url={newBeast.image_url} description={newBeast.description} key={index} />)
         });
 
 
