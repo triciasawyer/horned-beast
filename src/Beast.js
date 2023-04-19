@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import './beast.css';
+import { Card, Button, Col } from 'react-bootstrap';
 
 class Beast extends React.Component {
     constructor(props) {
@@ -8,7 +8,6 @@ class Beast extends React.Component {
         this.state = {
             //count likes
             favorites: 0,
-            beastNeeded: false
         };
     }
 
@@ -19,29 +18,34 @@ class Beast extends React.Component {
         });
     };
 
-    // beastNeeded = () => {
-    //     this.setState({
-    //         beastNeeded: true
-    //     })
-    // };
-
-    // beastGot = () => {
-    //     this.setState({
-    //         beastNeeded: false
-    //     })
-    // };
+    helpHandleOnShow = () => {
+        this.props.handleOnshow(this.props.title);
+    };
 
 
     render() {
         return (
             <>
                 <article>
-                    <h2>Beast: {this.props.title}</h2>
+                    <h4 onClick={this.helpHandleOnShow}>🐐 {this.props.title}</h4>
                     <p>Favorited {this.state.favorites + ' '} times</p>
                     <Button onClick={this.handleFavorites}> ❤️ </Button>
-                    <img src={this.props.image_url} alt={this.props.title} />
+
+                    <img src={this.props.image_url} alt={this.props.title} title={this.props.title} onClick={this.props.addBeast} />
                     <p>Description: {this.props.description}</p>
 
+
+
+                    <Col className="mt-4 ">
+                        <Card className="h-100 p-3">
+                            <Card.Title onClick={this.helpHandleOnShow}>
+                                {this.props.title}
+                            </Card.Title>
+                            <Card.Img className="mb-4" src={this.props.image_url} alt={this.props.title} title={this.props.title} onClick={this.props.addBeast} />
+                            <p>Favorited {this.state.favorites + ' '} times</p>
+                            <Button onClick={this.handleFavorites}> ❤️ </Button>
+                        </Card>
+                    </Col>
                 </article>
             </>
         );
