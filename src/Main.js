@@ -16,7 +16,8 @@ class Main extends React.Component {
                     description={newBeast.description}
                     key={index}
                     addBeast={this.props.addBeast}
-                    handleOnShow={this.props.handleOnShow} />
+                    handleOnShow={this.props.handleOnShow}
+                    data= {this.props.data}/>
             );
         });
 
@@ -25,7 +26,6 @@ class Main extends React.Component {
             <main>
                 <Container>
                     <Row lg={4} md={3} sm={2} xs={1}>
-                        {/* <Row> */}
                         {beasts}
                     </Row>
                 </Container>

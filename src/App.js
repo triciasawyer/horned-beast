@@ -21,7 +21,7 @@ constructor(props) {
 
 addBeast = () => {
   this.setState({
-    beast: this.state.beast + '🐐',
+    beast: this.state.beast
   });
 };
 
@@ -47,6 +47,12 @@ handleOnShow = (beastName) => {
         <Main addBeast={this.addBeast} data={data} handleOnShow={this.handleOnShow}/>
         <Footer>Tricia Sawyer 2023</Footer>
 
+<selectedBeast
+selectedBeast={this.state.selectedBeast}
+show={this.state.showModal}
+handleOnHide={this.handleOnHide}
+
+/>
 
         <Modal show={this.state.showModal} onHide={this.handleOnHide}>
           <Modal.Header closeButton>

@@ -19,7 +19,7 @@ class Beast extends React.Component {
     };
 
     helpHandleOnShow = () => {
-        this.props.handleOnshow(this.props.title);
+        this.props.handleOnShow(this.props.title);
     };
 
 
@@ -27,12 +27,10 @@ class Beast extends React.Component {
         return (
             <>
                 <article>
-
                     <Col className="mt-4 ">
                         <Card className="h-100 p-3">
-                            <Card.Title onClick={this.helpHandleOnShow}> {this.props.title}
-                            </Card.Title>
-                            <Card.Img className="mb-4" src={this.props.image_url} alt={this.props.title} title={this.props.title} onClick={this.props.addBeast} />
+                            <Card.Title onClick={this.props.title}>{this.props.addBeast}</Card.Title>
+                            <Card.Img className="mb-4" onClick={this.helpHandleOnShow} src={this.props.image_url} alt={this.props.title} title={this.props.title} />
                             <p>Favorited {this.state.favorites + ' '} times</p>
                             <Button onClick={this.handleFavorites}> ❤️ </Button>
                         </Card>
