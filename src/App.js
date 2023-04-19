@@ -21,7 +21,7 @@ constructor(props) {
 
 addBeast = () => {
   this.setState({
-    beast: this.state.pizza + '🐐',
+    beast: this.state.beast + '🐐',
   });
 };
 
@@ -43,7 +43,6 @@ handleOnShow = (beastName) => {
   render() {
     return (
       <>
-      <p onClick={() => {this.handleOnShow('test')}}>SHOW ME NOW TEST</p>
         <Header beast={this.state.beast}/>
         <Main addBeast={this.addBeast} data={data} handleOnShow={this.handleOnShow}/>
         <Footer>Tricia Sawyer 2023</Footer>
