@@ -46,7 +46,7 @@ handleOnShow = (beastName) => {
       <p onClick={() => {this.handleOnShow('test')}}>SHOW ME NOW TEST</p>
         <Header beast={this.state.beast}/>
         <Main addBeast={this.addBeast} data={data} handleOnShow={this.handleOnShow}/>
-        <Footer>Tricia Sawyer, 2023</Footer>
+        <Footer>Tricia Sawyer 2023</Footer>
 
 
         <Modal show={this.state.showModal} onHide={this.handleOnHide}>
