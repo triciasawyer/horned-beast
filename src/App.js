@@ -37,7 +37,7 @@ class App extends React.Component {
     return (
       <>
         <Header beast={this.state.beast} />
-        {/* /*removeaddBeast*/<Main addBeast={this.addBeast} data={data} handleOnShow={this.handleOnShow} />}
+        <Main data={data} handleOnShow={this.handleOnShow} />
         <Footer>Tricia Sawyer 2023</Footer>
 
         <selectedBeast
