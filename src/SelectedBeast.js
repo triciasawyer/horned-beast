@@ -3,16 +3,19 @@ import Modal from 'react-bootstrap/Modal';
 
 class SelectedBeast extends React.Component {
   render() {
+    console.log(this.props.selectedBeast);
     return (
       <>
 
-        <Modal show={this.state.showModal} onHide={this.handleOnHide}>
+        <Modal show={this.props.show} onHide={this.props.handleOnHide}>
           <Modal.Header closeButton>
-            <Modal.Title>{this.state.Title}</Modal.Title>
+            <Modal.Title>{this.props.selectedBeast.title}</Modal.Title>
           </Modal.Header>
 
-          <Modal.Body>{this.state.image_url}</Modal.Body>
-          <Modal.Footer>{this.state.description}</Modal.Footer>
+          <Modal.Body>
+            <img src={this.props.selectedBeast.image_url} alt={this.props.title} className='img-fluid'/>
+            </Modal.Body>
+          <Modal.Footer>{this.props.selectedBeast.description}</Modal.Footer>
         </Modal>
       </>
     )

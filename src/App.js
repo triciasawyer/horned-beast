@@ -4,7 +4,7 @@ import Main from './Main.js';
 import Footer from './Footer.js';
 import './App.css';
 import data from './data.json';
-import selectedBeast from './SelectedBeast.js';
+import SelectedBeast from './SelectedBeast.js';
 
 class App extends React.Component {
   //1. add constructor
@@ -14,7 +14,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       showModal: false,
-      selectedBeast: ''
+      selectedBeast: {}
     };
   }
 
@@ -25,9 +25,13 @@ class App extends React.Component {
   };
 
   handleOnShow = (beastName) => {
+    console.log(beastName);
+    let selectedBeast = data.find(element => element.title = beastName);
+    console.log("🚀 ~ file: App.js:30 ~ App ~ selectedBeast:", selectedBeast)
+
     this.setState({
       showModal: true,
-      selectedBeast: beastName
+      selectedBeast: selectedBeast
     });
   };
 
@@ -40,11 +44,10 @@ class App extends React.Component {
         <Main data={data} handleOnShow={this.handleOnShow} />
         <Footer>Tricia Sawyer 2023</Footer>
 
-        <selectedBeast
+        <SelectedBeast
           selectedBeast={this.state.selectedBeast}
           show={this.state.showModal}
           handleOnHide={this.handleOnHide} />
-
 
       </>
     );
