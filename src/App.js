@@ -4,7 +4,7 @@ import Main from './Main.js';
 import Footer from './Footer.js';
 import './App.css';
 import data from './data.json';
-import Modal from 'react-bootstrap/Modal';
+import selectedBeast from '../SelectedBeast.js';
 
 class App extends React.Component {
   //1. add constructor
@@ -50,15 +50,9 @@ handleOnShow = (beastName) => {
 <selectedBeast
 selectedBeast={this.state.selectedBeast}
 show={this.state.showModal}
-handleOnHide={this.handleOnHide}
+handleOnHide={this.handleOnHide}/>
 
-/>
-
-        <Modal show={this.state.showModal} onHide={this.handleOnHide}>
-          <Modal.Header closeButton>
-            <Modal.Title>{this.state.selectedBeast}</Modal.Title>
-          </Modal.Header>
-        </Modal>
+        
       </>
     );
   }
