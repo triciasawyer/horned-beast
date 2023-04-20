@@ -4,55 +4,55 @@ import Main from './Main.js';
 import Footer from './Footer.js';
 import './App.css';
 import data from './data.json';
-import selectedBeast from '../SelectedBeast.js';
+import selectedBeast from './SelectedBeast.js';
 
 class App extends React.Component {
   //1. add constructor
   // add helper function
 
-constructor(props) {
-  super(props);
-  this.state = {
-    beast: '',
-    showModal: false,
-    selectedBeast: ''
+  constructor(props) {
+    super(props);
+    this.state = {
+      beast: '',
+      showModal: false,
+      selectedBeast: ''
+    };
+  }
+
+  addBeast = () => {
+    this.setState({
+      beast: this.state.beast
+    });
   };
-}
 
-addBeast = () => {
-  this.setState({
-    beast: this.state.beast
-  });
-};
+  handleOnHide = () => {
+    this.setState({
+      showModal: false
+    });
+  };
 
-handleOnHide = () => {
-  this.setState({
-    showModal: false
-  });
-};
-
-handleOnShow = (beastName) => {
-  this.setState({
-    showModal: true,
-    selectedBeast: beastName
-  });
-};
+  handleOnShow = (beastName) => {
+    this.setState({
+      showModal: true,
+      selectedBeast: beastName
+    });
+  };
 
 
   //2. render() {return is where our html comes from}
   render() {
     return (
       <>
-        <Header beast={this.state.beast}/>
-        <Main addBeast={this.addBeast} data={data} handleOnShow={this.handleOnShow}/>
+        <Header beast={this.state.beast} />
+        <Main addBeast={this.addBeast} data={data} handleOnShow={this.handleOnShow} />
         <Footer>Tricia Sawyer 2023</Footer>
 
-<selectedBeast
-selectedBeast={this.state.selectedBeast}
-show={this.state.showModal}
-handleOnHide={this.handleOnHide}/>
+        <selectedBeast
+          selectedBeast={this.state.selectedBeast}
+          show={this.state.showModal}
+          handleOnHide={this.handleOnHide} />
 
-        
+
       </>
     );
   }
