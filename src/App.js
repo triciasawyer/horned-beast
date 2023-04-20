@@ -13,17 +13,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      beast: '',
       showModal: false,
       selectedBeast: ''
     };
   }
-
-  addBeast = () => {
-    this.setState({
-      beast: this.state.beast
-    });
-  };
 
   handleOnHide = () => {
     this.setState({
@@ -44,7 +37,7 @@ class App extends React.Component {
     return (
       <>
         <Header beast={this.state.beast} />
-        <Main addBeast={this.addBeast} data={data} handleOnShow={this.handleOnShow} />
+        {/* /*removeaddBeast*/<Main addBeast={this.addBeast} data={data} handleOnShow={this.handleOnShow} />}
         <Footer>Tricia Sawyer 2023</Footer>
 
         <selectedBeast
