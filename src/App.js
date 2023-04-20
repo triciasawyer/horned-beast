@@ -5,6 +5,14 @@ import Footer from './Footer.js';
 import './App.css';
 import data from './data.json';
 import SelectedBeast from './SelectedBeast.js';
+import Form from "react-bootstrap/Form";
+
+
+
+
+
+
+
 
 class App extends React.Component {
   //1. add constructor
