@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import './beast.css';
+import { Card, Button, Col } from 'react-bootstrap';
 
 class Beast extends React.Component {
     constructor(props) {
@@ -8,40 +8,33 @@ class Beast extends React.Component {
         this.state = {
             //count likes
             favorites: 0,
-            beastNeeded: false
         };
     }
 
-    // helper function 
+    // helper function for count likes
     handleFavorites = () => {
         this.setState({
             favorites: this.state.favorites + 1,
         });
     };
 
-    // beastNeeded = () => {
-    //     this.setState({
-    //         beastNeeded: true
-    //     })
-    // };
-
-    // beastGot = () => {
-    //     this.setState({
-    //         beastNeeded: false
-    //     })
-    // };
+    helpHandleOnShow = () => {
+        this.props.handleOnShow(this.props.title);
+    };
 
 
     render() {
         return (
             <>
                 <article>
-                    <h2>Beast: {this.props.title}</h2>
-                    <p>Favorited {this.state.favorites + ' '} times</p>
-                    <Button onClick={this.handleFavorites}> ❤️ </Button>
-                    <img src={this.props.image_url} alt={this.props.title} />
-                    <p>Description: {this.props.description}</p>
-
+                    <Col className="mt-4 ">
+                        <Card className="h-100 p-3">
+                            <Card.Title>{this.props.title}</Card.Title>
+                            <Card.Img className="mb-4" src={this.props.image_url} alt={this.props.title} title={this.props.title} onClick={this.helpHandleOnShow} />
+                            <p>Favorited {this.state.favorites + ' '} times</p>
+                            <Button onClick={this.handleFavorites}> ❤️ </Button>
+                        </Card>
+                    </Col>
                 </article>
             </>
         );

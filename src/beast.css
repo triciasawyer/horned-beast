@@ -23,12 +23,11 @@ article p {
 }
 
 article p:last-of-type {
-  padding-left: 1rem;
+  padding-left: 3.5rem;
   cursor: pointer;
 }
 
 article p:last-of-type:hover {
-  color: rgb(18, 255, 10);
   font-weight: bolder;
 }
 
