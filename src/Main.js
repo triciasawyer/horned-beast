@@ -13,7 +13,8 @@ class Main extends React.Component {
                 <Beast 
                 title={newBeast.title} 
                 image_url={newBeast.image_url} 
-                description={newBeast.description} key={index}
+                description={newBeast.description}
+                key={index}
                 handleOnShow={this.props.handleOnShow}
                 data={this.props.data}
                  />

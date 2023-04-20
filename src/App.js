@@ -26,7 +26,7 @@ class App extends React.Component {
 
   handleOnShow = (beastName) => {
     console.log(beastName);
-    let selectedBeast = data.find(element => element.title = beastName);
+    let selectedBeast = data.find(element => element.title === beastName);
     console.log("🚀 ~ file: App.js:30 ~ App ~ selectedBeast:", selectedBeast)
 
     this.setState({
