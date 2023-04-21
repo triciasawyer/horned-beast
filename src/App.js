@@ -7,119 +7,15 @@ import data from './data.json';
 import SelectedBeast from './SelectedBeast.js';
 import Form from "react-bootstrap/Form";
 
-let menu = [this.state.horns];
-
-class HornForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      manyHorns: ''
-    };
-  }
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-
-    let manyHorns = event.target.manyHorns.value;
-    //add it to state
-
-    this.setState({
-      manyHorns: manyHorns,
-    });
-  };
-
-  handleInput = (event) => {
-    //we dont need to prevent default
-    let userName = event.target.value;
-    console.log("🚀 handleInput ~ userName", userName);
-    //now add to state
-    this.setState({
-      userName: userName,
-    });
-  };
-
-  handleSelect = (event) => {
-    let selected = event.target.value;
-    if (selected === "even") {
-      let newMenu = menu.filter((number) => number % 2 === 0);
-      this.setState({ sortedMenu: newMenu });
-    } else if (selected === "odd") {
-      //filter over our array of numbers
-      let newMenu = data.filter((number) => number % 2 !== 0);
-      //set state with the odds
-      this.setState({ sortedData: newMenu });
-    } else {
-      this.setState({ sortedData: data });
-    }
-  };
-
-
-
-
-
-
-
-
-  render() {
-    let horns = this.state.horns.map((number, index) => {
-      return <ListGroup.Item key={index}>{number} [index~] {this.state.horns[index]}</ListGroup.Item>;
-    });
-
-    return (
-      <>
-        <section className="myLayout">
-          <header>Forms in React</header>
-          <main>
-            <section className="listHorns">
-              <ListGroup>{horns}</ListGroup>
-            </section>
-
-            <Form onSubmit={this.handleSubmit}>
-              <Form.Label>
-                Name:
-                <input type="text" name="userName" onInput={this.handleInput} />
-              </Form.Label>
-
-
-
-              <Form.Group controlId="Horns">
-                <Form.Label>Horns:</Form.Label>
-                <Form.Control type="text" />
-              </Form.Group>
-
-
-
-              <p>Selected Horns</p>
-              <Form.Select name="selected" onChange={this.handleSelect}>
-                <option value="all">All</option>
-                <option value="even">Even</option>
-                <option value="odd">Odd</option>
-              </Form.Select>
-
-              <Button type="submit">Submit</Button>
-            </Form>
-          </main>
-        </section>
-      </>
-    );
-  }
-}
-
-
-
-
-
 
 
 class App extends React.Component {
-  //1. add constructor
-  // add helper function
-
   constructor(props) {
     super(props);
     this.state = {
       showModal: false,
-      selectedBeast: {}
+      selectedBeast: {},
+      sortedData: data
     };
   }
 
@@ -140,13 +36,50 @@ class App extends React.Component {
     });
   };
 
+  handleSelected = (event) => {
+    let selected = event.target.value;
+    if (selected === '1') {
+      let newData = data.filter(numHorns => numHorns.horns === 1);
+      this.setState({ sortedData: newData });
+    } else if (selected === '2') {
+      let newData = data.filter(numHorns => numHorns.horns === 2);
+      this.setState({ sortedData: newData });
+    } else if (selected === '3') {
+      let newData = data.filter(numHorns => numHorns.horns === 3);
+      this.setState({ sortedData: newData });
+    } else if (selected === '100') {
+      let newData = data.filter(numHorns => numHorns.horns === 100);
+      this.setState({ sortedData: newData });
+    } else {
+      this.setState({ sortedData: data });
+    }
+  };
 
   //2. render() {return is where our html comes from}
   render() {
+    let data = this.state.sortedData.map((hornsNum, index) => {
+      return hornsNum;
+    })
     return (
       <>
+
         <Header beast={this.state.beast} />
-        <Main data={data} handleOnShow={this.handleOnShow} />
+
+        <Form>
+          <Form.Group>
+            <label> Number of Horns </label>
+            <Form.Select title="selected" onChange={this.handleSelect}>
+              <option value="All"> All</option>
+              <option value="1"> 1</option>
+              <option value="2"> 2</option>
+              <option value="3"> 3</option>
+              <option value="100"> 100</option>
+            </Form.Select>
+          </Form.Group><br></br>
+        </Form>
+
+
+        <Main addHornedAni = {this.addHornedAni} data={data} handleOnShow={this.handleOnShow} />
         <Footer>Tricia Sawyer 2023</Footer>
 
         <SelectedBeast
