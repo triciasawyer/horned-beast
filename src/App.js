@@ -5,7 +5,6 @@ import Footer from './Footer.js';
 import './App.css';
 import data from './data.json';
 import SelectedBeast from './SelectedBeast.js';
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 
@@ -68,23 +67,24 @@ class App extends React.Component {
       <>
 
         <Header beast={this.state.beast} />
+        <section className='myForm'>
+          <Form>
+            <Form.Group>
+              <label className='formTitle'> Number of Horns </label>
+              <Form.Select className='selector'title="selected" onChange={this.handleSelected}>
+                <option value="All"> Horns</option>
+                <option value="1"> 1</option>
+                <option value="2"> 2</option>
+                <option value="3"> 3</option>
+                <option value="100"> 100</option>
+              </Form.Select>
+            </Form.Group>
+          </Form>
+        </section>
 
-        <Form>
-          <Form.Group>
-            <label> Number of Horns </label>
-            <Form.Select title="selected" onChange={this.handleSelected}>
-              <option value="All"> All</option>
-              <option value="1"> 1</option>
-              <option value="2"> 2</option>
-              <option value="3"> 3</option>
-              <option value="100"> 100</option>
-            </Form.Select>
-          </Form.Group>
-          <Button type="submit">Submit</Button>
-        </Form>
+        <Main addHornedAni={this.addHornedAni} data={data} handleOnShow={this.handleOnShow} />
 
 
-        <Main addHornedAni = {this.addHornedAni} data={data} handleOnShow={this.handleOnShow} />
         <Footer>Tricia Sawyer 2023</Footer>
 
         <SelectedBeast
