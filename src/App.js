@@ -5,6 +5,7 @@ import Footer from './Footer.js';
 import './App.css';
 import data from './data.json';
 import SelectedBeast from './SelectedBeast.js';
+import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 
@@ -55,6 +56,9 @@ class App extends React.Component {
     }
   };
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+  }
   //2. render() {return is where our html comes from}
   render() {
     let data = this.state.sortedData.map((hornsNum, index) => {
@@ -68,14 +72,15 @@ class App extends React.Component {
         <Form>
           <Form.Group>
             <label> Number of Horns </label>
-            <Form.Select title="selected" onChange={this.handleSelect}>
+            <Form.Select title="selected" onChange={this.handleSelected}>
               <option value="All"> All</option>
               <option value="1"> 1</option>
               <option value="2"> 2</option>
               <option value="3"> 3</option>
               <option value="100"> 100</option>
             </Form.Select>
-          </Form.Group><br></br>
+          </Form.Group>
+          <Button type="submit">Submit</Button>
         </Form>
 
 
