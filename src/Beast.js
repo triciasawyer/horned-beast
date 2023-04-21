@@ -28,7 +28,7 @@ class Beast extends React.Component {
             <>
                 <article>
                     <Col className="mt-4 ">
-                        <Card className="h-100 p-3">
+                        <Card className="card">
                             <Card.Title>{this.props.title}</Card.Title>
                             <Card.Img className="mb-4" src={this.props.image_url} alt={this.props.title} title={this.props.title} onClick={this.helpHandleOnShow} />
                             <p>Favorited {this.state.favorites + ' '} times</p>

@@ -1,26 +1,52 @@
 body {
-  background-color: rgb(134, 108, 74);
   font-size: 25px;
   text-align: center;
   color: whitesmoke;
 }
 
-h2, h3 {
-  background-color: rgb(112, 136, 16);
-  border-radius: 10px;
-  display: inline;
-  padding: 10px;
-}
-
 h1 {
-  background-color: rgb(52, 108, 41);
+  background-color: rgb(72, 4, 15);
   border-radius: 20px;
   font-style: italic;
   padding: 10px;
+  padding-left: 590px;
+  color: rgb(224, 220, 220);
 }
+
 footer {
-  background-color: rgb(29, 72, 105);
+  background-color: rgb(72, 4, 15);
   border-radius: 10px;
   padding: 10px;
   height: 100px;
+}
+
+footer p {
+  text-align: center;
+  font-size: 20px;
+  color: rgb(224, 220, 220);
+}
+
+.myForm {
+  display: flex;
+  height: 120px;
+  width: 400px;
+  background-color: rgb(207, 202, 202);
+  margin-left: 530px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.formTitle {
+  font-size: 25px;
+  padding-left: 105px;
+  margin-top: 10px;
+}
+
+.selector {
+  margin-left: 55px;
+  margin-top: 10px;
+}
+
+.myForm option {
+  text-align: center;
 }
